@@ -32,6 +32,8 @@ import Staff.Run;
 
 public class Test {
  public static void main (String [] args){
+    
+    //Lambda function for reading data from database..
     Database read=()->{
     try (BufferedReader reader = new BufferedReader(new FileReader("data.txt"))) {
         int roomListSize = Integer.parseInt(reader.readLine()); // Read the list size
@@ -263,6 +265,9 @@ public class Test {
 };
     read.data();
     copyRight();
+
+
+    //Main file starts
     while (true) {
 
         //Variables for authentication..
@@ -309,6 +314,8 @@ public class Test {
             System.out.println("  *********************");
             System.out.println("--------------------------------------------------------------------------------");
             System.out.println("  *********************");
+
+            //Lambda function to write data in database..
             Database write=()->{
 
                 try (BufferedWriter writer = new BufferedWriter(new FileWriter("data.txt"))) {

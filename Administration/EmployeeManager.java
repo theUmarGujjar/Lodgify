@@ -1,5 +1,6 @@
 package Administration;
 
+import java.sql.Driver;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -83,7 +84,7 @@ public class EmployeeManager {
  // POLYMORPHISIM ..
  public  void addEmp(Employee emp){
 
-    //check that emp refernce is instance of which class..
+    //check that emp refernce is instance of which class by using instance of operator..
 
     if(emp instanceof DriverM){
         DriverM d1 = new DriverM();
@@ -98,13 +99,13 @@ public class EmployeeManager {
 
     else if( emp instanceof ReceptionistHotel ){
         ReceptionistHotel hotelReceptionist1 = new ReceptionistHotel();
-        hotelReceptionist1.loadEmp();// for testing
+        hotelReceptionist1.loadEmp();
         hotelReceptionistList.add(hotelReceptionist1);
     }
 
     else if( emp instanceof ReceptionistResturant){
         ReceptionistResturant resturnatReceptionist1 = new ReceptionistResturant();
-        resturnatReceptionist1.loadEmp();// for testing
+        resturnatReceptionist1.loadEmp();
         resturantReceptionistList.add(resturnatReceptionist1);
     }
 }
@@ -117,7 +118,6 @@ public class EmployeeManager {
         System.out.println("Enter the CNIC of the employee : ");
         cnic = input.nextLine();
 
-         // testing phase..
         if(emp instanceof DriverM){
             if(purpose.equals("remove")){
                 delete(driverList,cnic);
@@ -156,6 +156,8 @@ public class EmployeeManager {
             }      
         }
     }
+
+    //Funtion to update employee data..
     public void updateEmp(Employee emp){
 
         System.out.println("......You can reset the gmail , phonenumber and salary after giving the cnic ......");
@@ -189,6 +191,7 @@ public class EmployeeManager {
     }
 
 
+    //Use of Generic function..
     public <T extends Employee>void updateEmployee(ArrayList<T> emp ,String cnic){
         Boolean found = false;
 
@@ -208,48 +211,48 @@ public class EmployeeManager {
     
 
 
-public <T extends Employee>void delete(ArrayList<T> emp ,String cnic){
-    Boolean found = false;
+    public <T extends Employee>void delete(ArrayList<T> emp ,String cnic){
+        Boolean found = false;
 
 
 
 
-    for(int i = 0 ; i< emp.size() ; i++){
+        for(int i = 0 ; i< emp.size() ; i++){
 
 
-        if(cnic.equals(emp.get(i).getCnic())){
-            emp.remove(i);
-            found = true;
-            System.out.println("employee with this cnic is removed");
+            if(cnic.equals(emp.get(i).getCnic())){
+                emp.remove(i);
+                found = true;
+                System.out.println("employee with this cnic is removed");
+            }
+        }
+        if(!found){
+            System.out.println("No employee in database with that  cnic ");
         }
     }
-    if(!found){
-        System.out.println("No employee in database with that  cnic ");
-    }
-}
 
 
-public <T extends Employee>void setinfo(ArrayList<T> emp ,String cnic,String gmail,int salary,String phoneNumber){
-    Boolean found = false;
-    for(int i = 0 ; i< emp.size() ; i++){
-        if(cnic.equals(emp.get(i).getCnic())){
-           
-            emp.get(i).setGmail(gmail);
-            emp.get(i).setSalary(salary);
-            emp.get(i).setPhoneNumber(phoneNumber);
-           
-           
-           
-            found = true;
+    public <T extends Employee>void setinfo(ArrayList<T> emp ,String cnic,String gmail,int salary,String phoneNumber){
+        Boolean found = false;
+        for(int i = 0 ; i< emp.size() ; i++){
+            if(cnic.equals(emp.get(i).getCnic())){
+            
+                emp.get(i).setGmail(gmail);
+                emp.get(i).setSalary(salary);
+                emp.get(i).setPhoneNumber(phoneNumber);
+            
+            
+            
+                found = true;
+            }
+        }
+        if(!found){
+            System.out.println("No employee in database with that  cnic ");
         }
     }
-    if(!found){
-        System.out.println("No employee in database with that  cnic ");
-    }
-}
 
 
-
+    //Function to display employee data..
     public void displayEmployee() {
 
         if (hotelReceptionistList.isEmpty()) {

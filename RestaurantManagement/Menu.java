@@ -1,15 +1,14 @@
 package RestaurantManagement;
 
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menu {
-    public  static ArrayList<FoodItem> menuItems =new ArrayList<>();
+
+    public static ArrayList<FoodItem> menuItems = new ArrayList<>();
     private Scanner input;
 
     // Constructors overloading
-
     public Menu() {
         //constructor chaining
         this(menuItems);
@@ -18,11 +17,13 @@ public class Menu {
     public Menu(ArrayList<FoodItem> menuItems) {
         setMenuItems(menuItems);
     }
+
     public Menu(Menu menu) {
+        //constructor chaining
         this(menuItems);
     }
-//    getter setter
 
+//    getter setter
     public ArrayList<FoodItem> getMenuItems() {
         return menuItems;
     }
@@ -45,8 +46,8 @@ public class Menu {
             System.out.println("Enter 4 to View menu item");
             System.out.println("#####################################################################################");
 
-            int choice =  Restaurant.getUserChoice();
-            ItemStatus itemStatus=ItemStatus.chooseStatus(choice);
+            int choice = Restaurant.getUserChoice();
+            ItemStatus itemStatus = ItemStatus.chooseStatus(choice);
             switch (itemStatus) {
                 case EXIT:
                     System.out.println("Exiting the Menu");
@@ -62,7 +63,6 @@ public class Menu {
                     updateItem();
                     break;
                 case REMOVE:
-
 
                     System.out.println("--------------------------Delete Menu Item---------------------------");
                     deleteItem();
@@ -83,6 +83,7 @@ public class Menu {
         }
     }
 
+    //Function to check there is no duplicat of that food item..
     public boolean duplicateChecker(FoodItem item, int skipIndex) {
         for (int i = 0; i < menuItems.size(); i++) {
             if (i != skipIndex && menuItems.get(i).getName().equals(item.getName())) {
@@ -92,6 +93,7 @@ public class Menu {
         return false;
     }
 
+    //Function to display Menu
     public void displayMenu() {
         System.out.println("*******************************************************************************");
         if (menuItems.isEmpty()) {
@@ -105,8 +107,7 @@ public class Menu {
         System.out.println("*******************************************************************************");
     }
 
-
-
+    // Function to add menu items...
     public void addMenuItems() {
         FoodItem item = new FoodItem();
         item.setEverythingManually();
@@ -118,11 +119,11 @@ public class Menu {
             return;
         }
 
-
         menuItems.add(item);
         System.out.println("Item added successfully.");
     }
 
+    //Function to update menu items..
     public void updateItem() {
         if (menuItems.isEmpty()) {
             System.out.println("((((((((((((((Result: ))))))))))))))");
@@ -155,18 +156,19 @@ public class Menu {
         System.out.println("Item updated successfully.");
     }
 
+    //Funtion to delete menu items..
     public void deleteItem() {
         if (menuItems.isEmpty()) {
             System.out.println("((((((((((((((Result: ))))))))))))))");
             System.out.println("No item available in menu to delete");
             return;
         }
-        int choice ;
-        while(true) {
+        int choice;
+        while (true) {
             System.out.println("Enter 0 to go back");
             System.out.println("Enter 1 to delete item by name ");
             System.out.println("Enter 2 to delete all items ");
-            choice =  Restaurant.getUserChoice();
+            choice = Restaurant.getUserChoice();
             switch (choice) {
                 case 0:
                     System.out.println("((((((((((((((Result: ))))))))))))))");
@@ -187,9 +189,6 @@ public class Menu {
             }
         }
     }
-
-
-
 
     private int findItemIndexByName(String name) {
         for (int i = 0; i < menuItems.size(); i++) {
