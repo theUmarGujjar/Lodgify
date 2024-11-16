@@ -30,10 +30,10 @@ public class EmployeeManager {
 
         while(true){
             System.out.println("Please select which type of Employee : ");
-            System.out.println("1. driver");
-            System.out.println("2. sweeper");
-            System.out.println("3. resturant receptionist");
-            System.out.println("4. hotel receptionist");
+            System.out.println(" Driver");
+            System.out.println(" Sweeper");
+            System.out.println(" Resturant receptionist");
+            System.out.println(" Hotel receptionist");
             String empType = input.nextLine();
             empType = empType.toLowerCase();
     

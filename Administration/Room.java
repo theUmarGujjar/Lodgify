@@ -1,5 +1,9 @@
 package Administration;
+
+import java.util.Scanner;
+
 public class Room{
+    private static final Scanner scanner = new Scanner(System.in);
 
     // Encapsulated instance variables..
     private int rNumber;
@@ -11,9 +15,9 @@ public class Room{
     private String rAvailability;
 
     public Room(){
-        
+
     }
-    
+
 
     //constructor..
     public Room(int rNumber , int rPrice , String rType , int rBeds , String rStatus , String rFloor ,String rAvailability){
@@ -40,27 +44,44 @@ public class Room{
 
     }
 
-     void setrNumber(int rNumber){
+    void setrNumber(int rNumber){
         this.rNumber = rNumber;
     }
-     void setrPrice(int rPrice){
+    void setrPrice(int rPrice){
         this.rPrice = rPrice;
     }
-     void setrType(String rType){
-        this.rType = rType;
+    public void setrType(String rType) {
+        if (rType != null && rType.matches("[a-zA-Z ]+")) {
+            this.rType = rType;
+        } else {
+            System.out.println("Invalid input: only alphabetic characters are allowed.");
+            System.out.print("Please enter a valid rType: ");
+            String newInput = scanner.nextLine();
+            setrType(newInput);
+        }
     }
-     void setrBeds(int rBeds){
+    void setrBeds(int rBeds){
         this.rBeds = rBeds;
     }
-    public void setrStatus(String rStatus){
+    public void setrStatus(String rStatus) {
         this.rStatus = rStatus;
     }
-     void setrFloor(String rFloor){
-        this.rFloor = rFloor;
+
+    void setrFloor(String rFloor) {
+        if (rFloor != null && rFloor.matches("[a-zA-Z ]+")) {
+            this.rFloor = rFloor;
+        } else {
+            System.out.println("Invalid input for rFloor: only alphabetic characters are allowed.");
+            System.out.print("Please enter a valid rFloor: ");
+            String newInput = scanner.nextLine();
+            setrFloor(newInput);
+        }
     }
-    public void setrAvailability(String rAvailability){
+
+    public void setrAvailability(String rAvailability) {
         this.rAvailability = rAvailability;
     }
+
 
 
     //getters functions..

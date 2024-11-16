@@ -39,7 +39,7 @@ public class PersonWhoBook extends Individual{
         setPhoneNumber(input.nextLine());
         System.out.print("Enter the gmail of that customer : ");
         setGmail(input.nextLine());
-        System.out.print("Enter the Dob of that customer : ");
+        System.out.print("Enter the Dob of that customer YYYY-MM-DD : ");
         setDob(input.nextLine());
 
         this.rNumber = rNumber;  

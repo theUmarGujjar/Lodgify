@@ -48,12 +48,27 @@ public class RoomManager {
     int rBeds = getValidIntInput("Number of beds : ");
     input.nextLine();
     r.setrBeds(rBeds);
-    System.out.println("room status : ");
-    String rStatus = input.nextLine();
-    r.setrStatus(rStatus);
-    System.out.println("room Floor : ");
+    System.out.println("room floor : ");
     String rFloor = input.nextLine();
     r.setrFloor(rFloor);
+    System.out.println("room Status : ");
+    while(true){    
+      System.out.println("You can only enter clean  / dirty");
+    
+      String  rStatus  = input.nextLine().trim(); 
+    
+      if(!( rStatus.equals("clean") ||  rStatus.equals("dirty"))){
+          
+        System.out.println("Invalid input ");
+        System.out.println("Enter again");    
+      }
+    else{
+        r.setrStatus(rStatus);
+      break;
+    }
+   
+    }
+  
     System.out.println("room availablility : ");
     while(true){    
       System.out.println("You can only enter yes / no");

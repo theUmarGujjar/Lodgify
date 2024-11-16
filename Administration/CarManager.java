@@ -71,12 +71,16 @@ int id=0;
     //removing car by matching id
     void removeCar(){
         System.out.println("Enter the id of car that you want to remove");
+        while(true){
         if(!(input.hasNextInt())){
             System.out.println();
             System.out.println("WRONG INPUT ::: ENTER INTEGER ONLY  ");
             System.out.println();
            input.nextLine();
+          }else{
+            break;
           }
+        }
           int id = input.nextInt();
           input.nextLine();
     Boolean found = false;
@@ -99,13 +103,16 @@ int id=0;
         System.out.println("you can update the model and lisence plate numner of car after giving its");
 
         System.out.println("enter the id of car you want to update");
-       
+       while(true){
         if(!(input.hasNextInt())){
           System.out.println();
           System.out.println("WRONG INPUT ::: ENTER INTEGER ONLY  ");
           System.out.println();
          input.nextLine();
+        }else{
+            break;
         }
+    }
         int id = input.nextInt();
         input.nextLine();
 

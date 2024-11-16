@@ -10,8 +10,5 @@ public class SweeperM extends Employee{
         
       }
 
-    public void loadEmp(){
-        super.loadEmp();
-      
-    }
+    
 }

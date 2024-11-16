@@ -18,10 +18,10 @@ public class Admin {
     boolean mainLoop = true;
     while (mainLoop) {
       System.out.println("which of the following do you want to manage");
-      System.out.println("Press 1 for cars");
-      System.out.println("Press 2 for employees ");
-      System.out.println("Press 3 for rooms ");
-      System.out.println("Enter 0 to exit ");
+      System.out.println("Press 1 for Cars");
+      System.out.println("Press 2 for Employees ");
+      System.out.println("Press 3 for Rooms ");
+      System.out.println("Enter 0 to Exit ");
       System.out.println("############################################################################################");
 
 

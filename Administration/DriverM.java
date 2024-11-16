@@ -9,9 +9,5 @@ public class DriverM extends Employee{
         super(name, cnic, phoneNumber, gmail, dob,salary,userName,passWord);
         
       }
-@Override
-public void loadEmp(){
-    super.loadEmp();  
 
-}
 }

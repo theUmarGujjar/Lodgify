@@ -72,13 +72,17 @@ abstract class Employee extends Individual{
             dob=input.nextLine();
             setDob(dob);
             System.out.println("salary : ");
+            while(true){
             if(!(input.hasNextInt())){
                 System.out.println();
                 System.out.println("WRONG INPUT ::: ENTER INTEGER ONLY  ");
                 System.out.println();
                 input.nextLine();
             
+            }else{
+                break;
             }
+        }
             salary=input.nextInt();
             input.nextLine();
             setSalary(salary);

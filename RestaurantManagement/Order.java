@@ -152,7 +152,7 @@ public class Order {
             int totalQuantity=menuItemDetail.get(sizeIndex).getQuantity();
             while (true){
                 System.out.println("Enter quantity of "+name+" "+"with size "+ size);
-                System.out.println("Total Quantity availabe are: "+ totalQuantity);
+                System.out.println("Total Quantity available are: "+ totalQuantity);
                 quantity= Restaurant.getUserChoice();
                 if(quantity<0 || quantity>totalQuantity){
                     System.out.println("Invalid quantity. Please try again.");
@@ -214,7 +214,7 @@ public class Order {
 
             while (true){
                 System.out.println("Enter quantity of "+ name+" "+"with size "+ size);
-                System.out.println("Total Quantity availabe are: "+ totalQuantity);
+                System.out.println("Total Quantity available are: "+ totalQuantity);
                 quantity= Restaurant.getUserChoice();
                 if(quantity<0 || quantity>totalQuantity){
                     System.out.println("Invalid quantity. Please try again.");
