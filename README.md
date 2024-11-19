@@ -4,21 +4,18 @@ Credentials For Testing:
 
 •	Admin portal:
 
-  o	Username: admin
-
-  o	Password: lodgify
+    o	Username: admin
+    o	Password: lodgify
   
 	Hotel Receptionist Portal:
-  
-  o	Username: brian123
-  
-  o	Password: 123brian
+    
+    o	Username: brian123
+    o	Password: 123brian
   
 	Restaurant Portal:
   
-  o	Username: charlie123
-  
-  o	Password: 123charlie
+    o	Username: charlie123
+    o	Password: 123charlie
   
 	Staff Portal:
   
