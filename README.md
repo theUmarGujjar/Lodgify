@@ -1,20 +1,26 @@
 Here is a brief manual to use our  software “LODGIFY”
 Each portal can only be accessed when you enter the username and password.
 Credentials For Testing:
+
 •	Admin portal:
   o	Username: admin
   o	Password: lodgify
+  
 	Hotel Receptionist Portal:
   o	Username: brian123
   o	Password: 123brian
+  
 	Restaurant Portal:
   o	Username: charlie123
   o	Password: 123charlie
+  
 	Staff Portal:
   Staff portal can be accessed by both sweeper and driver type employees.
+  
   o	Driver:
     	Username: john123
     	Password: 123john
+    
   o	Sweeper:
     	Username: ryan123
     	Password: 123ryan
